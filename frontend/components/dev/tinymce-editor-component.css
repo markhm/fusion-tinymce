@@ -1,0 +1,8 @@
+.defaultSkin table.mceLayout {
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.with-border {
+	border-radius: 5px;
+}
