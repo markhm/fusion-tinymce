@@ -1,7 +1,7 @@
-import { html, PropertyValues, property, customElement, unsafeCSS} from 'lit-element';
+// import { html, PropertyValues, property, customElement, unsafeCSS} from 'lit-element';
 
-// import {html,PropertyValues,unsafeCSS} from 'lit';
-// import {customElement,property} from 'lit/decorators';
+import {html,PropertyValues,unsafeCSS} from 'lit';
+import {customElement,property} from 'lit/decorators';
 
 import tinymce, {Editor} from 'tinymce';
 import 'tinymce/icons/default';
@@ -17,7 +17,7 @@ import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-custom-field';
 
 import {Layout} from 'views/view';
-// import {unsafeHTML} from 'lit/directives/unsafe-html.js';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 @customElement('tinymce-editor-component')
 export class TinymceEditorComponent extends Layout {
@@ -48,7 +48,7 @@ export class TinymceEditorComponent extends Layout {
           .invalid="${this.invalid}"
           .errorMessage="${this.errorMessage}"
       >
-        <div id="tinymceContent" style="height: 500px; width: 100%">${this.value}</div>
+        <div id="tinymceContent" style="height: 500px; width: 100%">${unsafeHTML(this.value)}</div>
       </vaadin-custom-field>
 		`;
 	}
@@ -105,7 +105,7 @@ export class TinymceEditorComponent extends Layout {
 		// For some reason, contentDiv is sometimes null.
 		console.log('onValueChanged caught');
 		if (tinymce.get('tinymceContent')) {
-			console.log('tinymceContent = ' + tinymce.get('tinymceContent').getContent());
+			console.log('tinymceContent = ' + tinymce.get('tinymceContent2').getContent());
 			this.value = tinymce.get('tinymceContent').getContent();
 			let event = new CustomEvent('content.updated', {
 				detail: {
