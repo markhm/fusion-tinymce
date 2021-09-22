@@ -58,7 +58,7 @@
     "lit": "2.0.0-rc.4",
     "mobx": "^6.1.5",
     "raw-loader": "^4.0.2",
-    "tinymce": "^5.7.1"
+    "tinymce": "^5.9.2"
   },
   "devDependencies": {
     "@types/validator": "13.1.0",
@@ -168,6 +168,6 @@
       "workbox-precaching": "6.2.0",
       "workbox-webpack-plugin": "6.2.0"
     },
-    "hash": "fb2f6cc5e073326dd0ce906373884696e9cb23dc3cc03d8120c086349537289a"
+    "hash": "7ddbd6add90ce633098b748dc9bb18075dcebb051d0269817748bc11ee5a1c35"
   }
 }
